@@ -10,6 +10,6 @@ documentation = "https://docs.rs/wasm-gc-capi"
 crate-type = ['cdylib']
 
 [dependencies]
-tetsy-wasm-gc-api = { path = '../wasm-gc-api' }
+tetsy-wasm-gc-api = { version = "0.1.11", path = '../wasm-gc-api' }
 cfg-if = "0.1"
 wasm-bindgen = { version = "0.2", optional = true }
