@@ -2,11 +2,14 @@
 name = "wasm-gc-capi"
 version = "0.1.0"
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
+repository = "https://github.com/tetcoin/wasm-gc"
+homepage = "https://github.com/tetcoin/wasm-gc"
+documentation = "https://docs.rs/wasm-gc-capi"
 
 [lib]
 crate-type = ['cdylib']
 
 [dependencies]
-wasm-gc-api = { path = '../wasm-gc-api' }
+tetsy-wasm-gc-api = { path = '../wasm-gc-api' }
 cfg-if = "0.1"
 wasm-bindgen = { version = "0.2", optional = true }

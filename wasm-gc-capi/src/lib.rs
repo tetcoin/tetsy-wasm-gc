@@ -1,7 +1,7 @@
 #![cfg_attr(feature = "wasm-bindgen", feature(proc_macro, wasm_custom_section, wasm_import_module))]
 #[macro_use]
 extern crate cfg_if;
-extern crate wasm_gc;
+extern crate tetsy_wasm_gc;
 
 pub const ERR_INVALID_MODULE: u32 = 1;
 pub const ERR_OUTPUT_TOO_SMALL: u32 = 2;
@@ -32,14 +32,14 @@ cfg_if! {
         use wasm_bindgen::prelude::*;
 
         #[wasm_bindgen]
-        pub fn wasm_gc(input: &[u8], output: &mut [u8]) -> u32 {
+        pub fn tetsy_wasm_gc(input: &[u8], output: &mut [u8]) -> u32 {
             gc(input, output, &WasmGcOptions::new())
         }
     } else {
         use std::slice;
 
         #[no_mangle]
-        pub unsafe extern fn wasm_gc(
+        pub unsafe extern fn tetsy_wasm_gc(
             input_ptr: *const u8,
             input_len: usize,
             output_ptr: *mut u8,
@@ -83,7 +83,7 @@ cfg_if! {
 }
 
 fn gc(input: &[u8], output: &mut [u8], opts: &WasmGcOptions) -> u32 {
-    let result = wasm_gc::Config::new()
+    let result = tetsy_wasm_gc::Config::new()
         .demangle(opts.demangle)
         .gc(input);
     let result = match result {

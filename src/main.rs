@@ -1,5 +1,5 @@
 extern crate env_logger;
-extern crate wasm_gc;
+extern crate tetsy_wasm_gc;
 extern crate getopts;
 
 use std::env;
@@ -40,7 +40,7 @@ fn main() {
     let mut contents = Vec::new();
     File::open(&input).unwrap().read_to_end(&mut contents).unwrap();
 
-    let mut cfg = wasm_gc::Config::new();
+    let mut cfg = tetsy_wasm_gc::Config::new();
     cfg.demangle(!matches.opt_present("no-demangle"));
     let result = cfg.gc(&contents).expect("failed to parse wasm module");
     File::create(&output).unwrap().write_all(&result).unwrap();
@@ -59,15 +59,15 @@ binary, only make it a little smaller.
 Usage of this command typically looks like:
 
     # Read and write output to one file
-    wasm-gc foo.wasm
+    tetsy-wasm-gc foo.wasm
 
     # Read input from one file and write it to another file
-    wasm-gc input.wasm output.wasm
+    tetsy-wasm-gc input.wasm output.wasm
 
     # Passing various options
-    wasm-gc --no-demangle input.wasm -o output.wasm
+    tetsy-wasm-gc --no-demangle input.wasm -o output.wasm
 
-Please reports bugs to https://github.com/alexcrichton/wasm-gc if you find
+Please reports bugs to https://github.com/tetcoin/wasm-gc if you find
 them!
 ");
 }

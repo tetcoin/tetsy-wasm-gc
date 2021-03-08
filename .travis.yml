@@ -28,9 +28,9 @@ notifications:
     on_success: never
 
 before_deploy:
-  - name="wasm-gc-$TRAVIS_TAG-$TARGET"
+  - name="tetsy-wasm-gc-$TRAVIS_TAG-$TARGET"
   - mkdir $name
-  - cp target/$TARGET/release/wasm-gc $name/
+  - cp target/$TARGET/release/tetsy-wasm-gc $name/
   - cp README.md LICENSE-MIT LICENSE-APACHE $name/
   - tar czvf $name.tar.gz $name
 
@@ -39,7 +39,7 @@ deploy:
     secure: "v5eBBx8qMH8e3D1GHBDZsPgbgC83J/Lda4Z42CSrbDqkbidY+ySMQz+oT9m45jBaO5in8UhlMgBjPV4Wv65KEF3CJ1co85KUc88J6aBR0WfuMSgp/sYR6zhGgdgCQUmMCR0sY+OYtlPSlTXf4mPAvb0ecIUMzsKmBrHTdaD+VlasPe8lqzvM/J5VF4gSEjci2isj7agfhjiz52dUybsIX98I5iMlmi0YgZp0Rht4HLuIKTQuYrsKuWqSBGB8FIW4Lpnxnwy/nhzfIvWC8lbzvHvEBwE6zud4KCRdWLWkEhtoTQUAqGxQ9843m0rRTDHxU487Kyg0j1mphV2wJAgVy35QWeHTX7psgXHEF6nlFlIigcOxELb7osi4mqbYFTFThE1buD+0CEzGn1nvcpsxuezNK5PiiV1tW/d4yZk5ZNzVdXVit8rlkdgQg2WPi/VFPWI8sEVcIrTpyiYa0vrhKUuqiob38mmz1LszW5FBh6iCy3itQdNa3V+4Nvlt3wcmu0n5ICrbmCO54b4/YD7ntXZF3W1mJpLa1RWP3n67OE2m/CQPNpXt72Zt8FkiQ4WqnUw9HfMaEGjJqFljNPugX5P6hyAq8X5kqTHpzmka0VJdn5qgyOjIamgHCKzvgBoIrZiJcQfYUJs7zp4goeMUYpkb8GgCM12QacYXemomYr0="
   file_glob: true
   file:
-    - wasm-gc-$TRAVIS_TAG-$TARGET.tar.gz
+    - tetsy-wasm-gc-$TRAVIS_TAG-$TARGET.tar.gz
   on:
     condition: $DEPLOY = 1
     tags: true

@@ -1,10 +1,10 @@
-# wasm-gc
+# tetsy-wasm-gc
 
 > **Note**: you probably don't need to use this project. This project is no
-> longer necessary to run by hand, nor do you need the `wasm-gc` executable
+> longer necessary to run by hand, nor do you need the `tetsy-wasm-gc` executable
 > installed.
 >
-> For a longer explanation, these two points mean that `wasm-gc` is likely no
+> For a longer explanation, these two points mean that `tetsy-wasm-gc` is likely no
 > longer a useful command to run for you:
 >
 > 1. The Rust compiler now natively supports `--gc-sections` when linking wasm
