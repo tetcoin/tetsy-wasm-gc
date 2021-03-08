@@ -1,4 +1,4 @@
-extern crate parity_wasm;
+extern crate tetsy_wasm;
 #[macro_use]
 extern crate log;
 extern crate rustc_demangle;
@@ -11,7 +11,7 @@ use std::any::Any;
 use std::mem;
 use std::path::Path;
 
-use parity_wasm::elements::{
+use tetsy_wasm::elements::{
     Module,
     Serialize,
     Deserialize
@@ -82,9 +82,9 @@ impl Config {
 
 impl GcResult {
     /// Attepts to downcast this `GcResult` into an instance of
-    /// `parity_wasm::Module`.
+    /// `tetsy_wasm::Module`.
     ///
-    /// If your crate's `parity_wasm` crate is a different version than this
+    /// If your crate's `tetsy_wasm` crate is a different version than this
     /// crate then this method will fail and you'll need to use `into_bytes`.
     /// Otherwise the module is successfully extracted and returned.
     pub fn into_module<T: Any>(self) -> Result<T, Self> {
@@ -121,13 +121,13 @@ where
 }
 
 fn _gc_file(input: &Path, output: &Path) -> Result<(), Error> {
-    let mut module = parity_wasm::deserialize_file(input)
+    let mut module = tetsy_wasm::deserialize_file(input)
         .map_err(error::from)?
         .parse_names()
         .map_err(|(mut l, _)| l.remove(0).1)
         .map_err(error::from)?;
     Config::new()._gc(&mut module);
-    parity_wasm::serialize_to_file(output, module).map_err(error::from)?;
+    tetsy_wasm::serialize_to_file(output, module).map_err(error::from)?;
 
     Ok(())
 }

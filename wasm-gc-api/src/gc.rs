@@ -2,7 +2,7 @@ use std::collections::HashSet;
 use std::mem;
 use std::str;
 
-use parity_wasm::elements::*;
+use tetsy_wasm::elements::*;
 use rustc_demangle;
 
 use Config;

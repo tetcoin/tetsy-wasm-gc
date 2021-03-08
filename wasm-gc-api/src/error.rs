@@ -1,10 +1,10 @@
 use std::error;
 use std::fmt;
-use parity_wasm::elements::Error as ParityWasmError;
+use tetsy_wasm::elements::Error as TetsyWasmError;
 
 /// The error type for garbage collecting webassembly bytecode.
 #[derive(Debug)]
-pub struct Error(ParityWasmError);
+pub struct Error(TetsyWasmError);
 
 impl error::Error for Error {
     fn description(&self) -> &str {
@@ -18,6 +18,6 @@ impl fmt::Display for Error {
     }
 }
 
-pub fn from(parity: ParityWasmError) -> Error {
-    Error(parity)
+pub fn from(tetsy: TetsyWasmError) -> Error {
+    Error(tetsy)
 }
