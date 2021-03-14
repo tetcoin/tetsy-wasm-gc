@@ -9,6 +9,7 @@ homepage = "https://core.tetcoin.org"
 repository = "https://github.com/tetcoin/tetsy-wasm-gc"
 documentation = "https://docs.rs/tetsy-wasm-gc-api"
 license = "MIT/Apache-2.0"
+edition = "2018"
 readme = "README.md"
 
 [lib]
