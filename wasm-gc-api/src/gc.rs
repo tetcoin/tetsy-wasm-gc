@@ -5,9 +5,8 @@ use std::str;
 use tetsy_wasm::elements::*;
 use rustc_demangle;
 
-mod lib;
-use lib::Config;
-use bitvec::BitSet;
+use crate::Config;
+use crate::bitvec::BitSet;
 
 pub fn run(config: &mut Config, module: &mut Module) {
     let analysis = {
