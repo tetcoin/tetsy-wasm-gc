@@ -11,9 +11,6 @@ license = "MIT/Apache-2.0"
 edition = "2018"
 readme = "README.md"
 
-keywords = ["webasm"]
-categories = ["development-tools"]
-
 [[bin]]
 name = "tetsy-wasm-gc"
 path = "src/main.rs"
