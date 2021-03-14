@@ -8,7 +8,6 @@ categories = ["cryptography::cryptocurrencies"]
 homepage = "https://core.tetcoin.org"
 repository = "https://github.com/tetcoin/tetsy-wasm-gc"
 license = "MIT/Apache-2.0"
-edition = "2018"
 readme = "README.md"
 
 [[bin]]
