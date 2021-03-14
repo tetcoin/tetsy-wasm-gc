@@ -5,7 +5,8 @@ use std::str;
 use tetsy_wasm::elements::*;
 use rustc_demangle;
 
-use Config;
+mod lib;
+use lib::Config;
 use bitvec::BitSet;
 
 pub fn run(config: &mut Config, module: &mut Module) {
