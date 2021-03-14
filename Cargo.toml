@@ -1,6 +1,6 @@
 [package]
 name = "tetsy-wasm-gc"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
 repository = "https://github.com/tetcoin/wasm-gc"
 homepage = "https://github.com/tetcoin/wasm-gc"
@@ -17,7 +17,7 @@ path = "src/main.rs"
 [dependencies]
 env_logger = { version = "0.5", default-features = false }
 getopts = "0.2"
-tetsy-wasm-gc-api = { path = "wasm-gc-api", version = "0.1" }
+tetsy-wasm-gc-api = { path = "wasm-gc-api", version = "0.1.12" }
 
 [workspace]
 members = ['wasm-gc-capi']
